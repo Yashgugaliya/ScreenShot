@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/_12dp"
+    tools:context=".view.ui.fragment.InfoFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivMain"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tvNote"
+            style="@style/Text16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12dp"
+            android:background="@drawable/rounded_rectangle_with_border"
+            android:hint="@string/add_note"
+            android:padding="@dimen/_8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivMain" />
+
+        <TextView
+            android:id="@+id/tvCollection"
+            style="@style/Text18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8dp"
+            android:text="@string/collections"
+            android:textColor="@color/grey_200"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNote" />
+
+        <TextView
+            android:id="@+id/tvEdit"
+            style="@style/Text18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="@dimen/_8dp"
+            android:text="@string/edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNote" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCollection"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_0dp"
+            android:layout_marginTop="@dimen/_8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCollection"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_collection"/>
+        <TextView
+            android:id="@+id/tvDesc"
+            style="@style/Text18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8dp"
+            android:text="@string/description"
+            android:textColor="@color/grey_200"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvCollection" />
+
+        <TextView
+            android:id="@+id/tvDescription"
+            style="@style/Text16sp"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8dp"
+            android:layout_marginBottom="@dimen/_8dp"
+            tools:text="random Text"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDesc" />
+
+        <TextView
+            android:id="@+id/tvSave"
+            style="@style/Text14sp"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8dp"
+            android:background="@drawable/rounded_rectangle_with_border"
+            android:backgroundTint="@color/black"
+            android:gravity="center"
+            android:padding="@dimen/_8dp"
+            android:text="@string/save"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

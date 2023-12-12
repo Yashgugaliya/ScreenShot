@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ScreenShot" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.ScreenShot" parent="Base.Theme.ScreenShot" />
+
+    <!-- Bottom Sheet Dialog Style -->
+    <style name="BottomSheetDialogStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="bottomSheetStyle">@style/BottomSheetBackground</item>
+    </style>
+
+    <!-- Bottom Sheet Background -->
+    <style name="BottomSheetBackground" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/rounded_top_corners</item>
+    </style></resources>

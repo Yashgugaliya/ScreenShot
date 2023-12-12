@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/_16dp"
+    tools:context=".view.ui.bottomsheet.CollectionBottomSheetFragment">
+
+    <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+        android:id="@+id/dragHandle"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_8dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvSaveList"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dragHandle">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvCollection"
+                style="@style/Text22sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/collections"
+                android:textColor="@color/grey_200"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvNoCollection"
+                style="@style/Text16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8dp"
+                android:text="@string/no_added_collection"
+                android:textColor="@color/grey_200"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCollection" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:padding="@dimen/_12dp"
+                android:id="@+id/rvSelected"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_0dp"
+                android:layout_marginTop="@dimen/_12dp"
+                android:background="@drawable/rounded_rectangle_with_border"
+                android:minHeight="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:listitem="@layout/item_collection"
+                tools:itemCount="3"
+                app:layout_constraintTop_toBottomOf="@+id/tvNoCollection" />
+
+            <TextView
+                android:id="@+id/tvText"
+                style="@style/Text16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12dp"
+                android:text="@string/select_an_option"
+                android:textColor="@color/grey_200"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvSelected" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8dp"
+                android:minHeight="200dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvText" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/tvSaveList"
+        style="@style/Text14sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_8dp"
+        android:background="@drawable/rounded_rectangle_with_border"
+        android:backgroundTint="@color/black"
+        android:gravity="center"
+        android:padding="@dimen/_8dp"
+        android:text="@string/save"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
